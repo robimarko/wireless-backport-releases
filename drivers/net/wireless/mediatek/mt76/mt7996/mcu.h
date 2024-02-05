@@ -221,7 +221,7 @@ struct bss_rate_tlv {
 	u8 short_preamble;
 	u8 bc_fixed_rate;
 	u8 mc_fixed_rate;
-	u8 __rsv2[1];
+	u8 __rsv2[9];
 } __packed;
 
 struct bss_ra_tlv {
@@ -311,6 +311,22 @@ struct bss_sec_tlv {
 	u8 __rsv1[2];
 	u8 cipher;
 	u8 __rsv2[1];
+} __packed;
+
+struct bss_ifs_time_tlv {
+	__le16 tag;
+	__le16 len;
+	u8 slot_valid;
+	u8 sifs_valid;
+	u8 rifs_valid;
+	u8 eifs_valid;
+	__le16 slot_time;
+	__le16 sifs_time;
+	__le16 rifs_time;
+	__le16 eifs_time;
+	u8 eifs_cck_valid;
+	u8 rsv;
+	__le16 eifs_cck_time;
 } __packed;
 
 struct bss_power_save {
@@ -548,6 +564,7 @@ enum {
 					 sizeof(struct bss_txcmd_tlv) +		\
 					 sizeof(struct bss_power_save) +	\
 					 sizeof(struct bss_sec_tlv) +		\
+					 sizeof(struct bss_ifs_time_tlv) +	\
 					 sizeof(struct bss_mld_tlv))
 
 #define MT7996_STA_UPDATE_MAX_SIZE	(sizeof(struct sta_req_hdr) +		\

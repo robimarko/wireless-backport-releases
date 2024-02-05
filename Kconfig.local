@@ -895,6 +895,12 @@ config BACKPORTED_MT76x02_USB
 config BACKPORTED_MT76_CONNAC_LIB
 	tristate
 	default MT76_CONNAC_LIB
+config BACKPORTED_MT792x_LIB
+	tristate
+	default MT792x_LIB
+config BACKPORTED_MT792x_USB
+	tristate
+	default MT792x_USB
 config BACKPORTED_MT76x0_COMMON
 	tristate
 	default MT76x0_COMMON
@@ -937,9 +943,9 @@ config BACKPORTED_MT7663S
 config BACKPORTED_MT7915E
 	tristate
 	default MT7915E
-config BACKPORTED_MT7986_WMAC
+config BACKPORTED_MT798X_WMAC
 	tristate
-	default MT7986_WMAC
+	default MT798X_WMAC
 config BACKPORTED_MT7921_COMMON
 	tristate
 	default MT7921_COMMON

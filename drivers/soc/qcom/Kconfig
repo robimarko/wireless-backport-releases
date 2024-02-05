@@ -31,7 +31,6 @@ config QCOM_COMMAND_DB
 	  SoC specific identifier and information for the shared resources.
 
 config QCOM_CPR
-	depends on n
 	tristate "QCOM Core Power Reduction (CPR) support"
 	depends on m
 	depends on ARCH_QCOM && HAS_IOMEM
@@ -188,7 +187,6 @@ config QCOM_RPMH
 	  help apply the aggregated state on the resource.
 
 config QCOM_RPMHPD
-	depends on n
 	tristate "Qualcomm RPMh Power domain driver"
 	depends on m
 	depends on QCOM_RPMH && QCOM_COMMAND_DB
@@ -199,7 +197,6 @@ config QCOM_RPMHPD
 	  for the voltage rail.
 
 config QCOM_RPMPD
-	depends on n
 	tristate "Qualcomm RPM Power domain driver"
 	depends on m
 	depends on PM && OF
@@ -229,6 +226,7 @@ config QCOM_SMD_RPM
 	depends on m
 	depends on ARCH_QCOM || COMPILE_TEST
 	depends on RPMSG
+	depends on RPMSG_QCOM_SMD || RPMSG_QCOM_SMD=n
 	help
 	  If you say yes to this option, support will be included for the
 	  Resource Power Manager system found in the Qualcomm 8974 based

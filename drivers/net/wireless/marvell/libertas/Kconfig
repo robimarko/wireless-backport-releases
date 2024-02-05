@@ -3,8 +3,6 @@ config LIBERTAS
 	tristate "Marvell 8xxx Libertas WLAN driver support"
 	depends on m
 	depends on CFG80211
-	depends on WIRELESS_EXT
-	depends on WEXT_SPY
 	select LIB80211
 	depends on FW_LOADER
 	help
